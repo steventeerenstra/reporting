@@ -1,0 +1,12 @@
+Tables:
+Information of how it works is given in 
+* descriptive (baseline tables) or inferential (p-values/CIs):   
+  customized table (dataset with table cells printed via proc report):  
+  John Henry King.pdf gives explanation on the data of JohnHenryKing.sas
+  
+* descriptives via proc tabulate: Lai_ProcTabulateIntro_May2015.pdf  
+
+* formating ODS RTF  
+  odsRTF_general.pdf
+  odsRTF_Template_fonts.pdf (and other things)
+  
