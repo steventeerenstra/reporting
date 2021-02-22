@@ -1,13 +1,16 @@
-Tables:
-Information of how it works is given in 
-* descriptive (baseline tables) or inferential (p-values/CIs):   
-  customized table (dataset with table cells printed via proc report):  
-  John Henry King.pdf gives explanation on the data of JohnHenryKing.sas
-  
-* descriptives via proc tabulate: Lai_ProcTabulateIntro_May2015.pdf  
 
-* formating ODS RTF  
-  odsRTF_general.pdf
-  odsRTF_Template_fonts.pdf (and other things)
+Based on what amongst others is in the documentation folder:   
+* macros contains macros:  
+    = xtab_onerow: to make from a 2 x 2 cross table (trt x categorical outcome) one row   
+        suitable for processing with proc report: group lables in the first row and the outcomes of the categorical var in the   
+        second row (by group)  
+      
+    - xtab: to make a k x m table for proc report: group x categorical outcome  
+      
+    - rowvars_colvars: over a list of continuous variables calculate mean+/- sd, median<Q1,Q3> and [min,max]   
+         and put these statistics in rows and the variables in colums  
+           
+    - examples in 06_endpoints    
+    
+ * in the file 02_baseline an example of a baseline table made via the John Henry King method (shown in hte documentation)  
   
-  * 
