@@ -1,0 +1,18 @@
+ods graphics on /reset= all;
+title6 "spaghettiplots for individual patients in each treatmentarm";
+proc sgpanel data=nimbus ;
+panelby treatmentarm /novarname columns=3;* no varname in the headers;
+series x=time y=log_IL_2 /group=patient_id lineattrs=(pattern=solid);* get same line type;
+run;
+
+
+proc sgpanel data=nimbus(where=(treatmentarm ne "NA"));
+panelby treatmentarm;
+* use the grouplp and grouplc options to distinguish patients by arm;
+series x=time y=log_IL_2 /group=patient_id  grouplp=treatmentarm grouplc=treatmentarm;
+run;
+
+title6 "spaghettiplots for individual patients with different lines by treatmentarm: solid line (reduced) vs dashed line (standard)";
+proc sgplot data=nimbus(where=(treatmentarm ne "NA"));;
+series x=time y=log_IL_2 / group=patient_id grouplp=treatmentarm grouplc=treatmentarm  lineattrs=(color=black);
+run;
