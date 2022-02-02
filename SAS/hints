@@ -1,0 +1,6 @@
+* make macros that do all  the analyses for one outcome parameter;
+* let output be written to specific datasets <analysis_name>_&outcome;
+* use a repeat_macro to do this over several outcomes;
+* put per analysis all the outcomes in one dataset: data <analysis_name>; set <analysis_name>_ ; run;
+* then all the datasets <analysis_name>_outcome1 <analysis_name>_outcome2 etc are combined;
+* use proc print/ proc report or proc tabulate to make a report type table;
