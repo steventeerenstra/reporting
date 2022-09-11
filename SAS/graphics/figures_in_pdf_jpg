@@ -1,0 +1,18 @@
+*example to save figures from procedure output;
+
+ods pdf file="fig1D.pdf"; ;
+ods graphics on /border=off;
+ods select survivalplot;
+proc lifetest data=km2 plots=s(cb=hw test);
+time death_kaplan*death_ec_bi(0);
+strata tcga_rev/order=internal;* use order=internal to get the ordering of the format;
+run;
+ods select all;
+ods pdf close;
+
+ods listing gpath='C:\Users\st\surfdrive\Actief\22 Kaplan-Meier (Stephanie Vrede)\' IMAGE_DPI=300;
+ods graphics on /IMAGEFMT=jpg IMAGENAME="fig1D" border=off;
+proc lifetest data=km2 plots=s(cb=hw test);
+time death_kaplan*death_ec_bi(0);
+strata tcga_rev/order=internal;* use order=internal to get the ordering of the format;
+run;
